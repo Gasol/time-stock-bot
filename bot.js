@@ -37,7 +37,7 @@ function init() {
 
 
 function recomendedHandler(msg){
-  var fromId = msg.from.id;
+  var fromId = msg.chat.id;
   finvizScraper.recomended().then(urls=>{
     urls.forEach((url)=>{
       const stockName = URL.parse(url,true).query.t;

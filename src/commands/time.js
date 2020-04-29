@@ -3,7 +3,7 @@ import botCommander from '../botCommander';
 import scheduler from '../scheduler';
 
 export default function timeFullReport(msg, match){
-  var fromId = msg.from.id;
+  var fromId = msg.chat.id;
   var textTime = match[1];
   var stocks = stateManager.getStocksSymbolOfUser(fromId);
 

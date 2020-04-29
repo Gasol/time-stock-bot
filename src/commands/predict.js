@@ -5,7 +5,7 @@ import predictor from '../utils/predictor';
 import CONSTS from '../constants';
 
 export function predictionByParams(msg, match){
-  const fromId = msg.from.id;
+  const fromId = msg.chat.id;
   const daysOrMonths = match[1];
   const timeBack = match[2];
   const percentRatio = match[3];
@@ -20,7 +20,7 @@ export function predictionByParams(msg, match){
 }
 
 export function predictNow(msg, reportBack=true){
-  const fromId = msg.from.id;
+  const fromId = msg.chat.id;
   const predictionParams = stateManager.get(`${fromId}.${CONSTS.PREDICTION_SIGN}`);
   if(predictionParams){
     const {daysOrMonths, timeBack, percentRatio} = predictionParams;

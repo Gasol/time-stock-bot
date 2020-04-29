@@ -4,20 +4,20 @@ import dataFetcher from '../utils/dataFetcher';
 import {runPromises} from '../utils/promises';
 
 export function singleStock(msg, match){
-  const fromId = msg.from.id;
+  const fromId = msg.chat.id;
   const stockSign = match[1];
 
   return sendStockInfo(fromId, stockSign);
 }
 
 export function singleStockCmd(msg, match){
-  const fromId = msg.from.id;
+  const fromId = msg.chat.id;
   const stockSign = match[1];
   return sendStockInfo(fromId, stockSign);
 }
 
 export function allStocks(msg){
-  const fromId = msg.from.id;
+  const fromId = msg.chat.id;
   const stocks = stateManager.getStocksSymbolOfUser(fromId);
 
   if (stocks.length>0){

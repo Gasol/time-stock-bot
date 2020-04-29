@@ -1,7 +1,7 @@
 import botCommander from '../botCommander';
 
 export function sectorGraphs(msg){
-  const fromId = msg.from.id;
+  const fromId = msg.chat.id;
   const links = [
     '[Daily](http://finviz.com/grp_image.ashx?bar_sector_t.png)',
     '[Weekly](http://finviz.com/grp_image.ashx?bar_sector_w.png)',
@@ -15,7 +15,7 @@ export function sectorGraphs(msg){
   return Promise.all(links.map(link=>botCommander.sendMessage(fromId,link,{disable_web_page_preview:false})));
 }
 export function stock3dGraph(msg, match){
-  const fromId = msg.from.id;
+  const fromId = msg.chat.id;
   const stockSign = match[1];
 
   return botCommander.sendMessage(
@@ -25,7 +25,7 @@ export function stock3dGraph(msg, match){
   );
 }
 export function stockGraph(msg, match){
-  const fromId = msg.from.id;
+  const fromId = msg.chat.id;
   const stockSign = match[1];
   let amountPeriod = match[2];
   amountPeriod = amountPeriod===''?3:parseInt(amountPeriod);

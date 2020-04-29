@@ -2,7 +2,7 @@ import stateManager from '../stateManager';
 import botCommander from '../botCommander';
 
 export default function removeStockHandler(msg, match) {
-  const fromId = msg.from.id;
+  const fromId = msg.chat.id;
   const stockSymbol = match[1];
   const key = `${fromId}.${stockSymbol}`;
 

@@ -2,7 +2,7 @@ import botCommander from '../botCommander';
 import dataFetcher from '../utils/dataFetcher';
 
 export default function(msg, match){
-  const fromId = msg.from.id;
+  const fromId = msg.chat.id;
   const stockSign = match[1];
 
   const uppercaseStockSign = stockSign.toUpperCase();
