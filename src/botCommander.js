@@ -26,20 +26,8 @@ bot.on('error', (error) => {
 });
 
 
-const allKeyboardOpts ={
-  reply_markup:JSON.stringify({
-    keyboard:[
-      ['/get','/predict'],
-    ],
-    resize_keyboard: true,
-    one_time_keyboard: true,
-  }),
-  parse_mode: 'Markdown',
-  disable_web_page_preview:true,
-};
-
 export function sendMessage(id, message, extraOps){
-  return bot.sendMessage(id, message,  {...allKeyboardOpts, ...extraOps});
+  return bot.sendMessage(id, message,  extraOps);
 }
 
 let commands = {};

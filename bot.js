@@ -18,18 +18,6 @@ var bot = new TelegramBot(token, options);
 bot.setWebHook('stock.shubapp.com:443/bot'+token, __dirname+'/crt.pem');
 // var schedules={};
 
-var allKeyboardOpts ={
-  reply_markup:JSON.stringify({
-    keyboard:[
-      ['/get','/predict'],
-    ],
-    resize_keyboard: true,
-    one_time_keyboard: true,
-  }),
-  parse_mode: 'Markdown',
-  disable_web_page_preview:true,
-};
-
 function init() {
   bot.onText(/^\/info ([^ ]+)$/, infoHandler);
   bot.onText(/^\/recomended$/, recomendedHandler);
@@ -62,7 +50,7 @@ function stocksAlreadyAlerted(stock){
 }
 
 function sendMessage(id, message, extraOps){
-  bot.sendMessage(id, message, Object.assign({},allKeyboardOpts,extraOps));
+  bot.sendMessage(id, message, Object.assign({},extraOps));
 }
 
 init();
