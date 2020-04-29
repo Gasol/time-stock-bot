@@ -20,7 +20,7 @@ export default [{
   name: 'get',
   fn: 'allStocks',
   regex: /\/get$/,
-  disabled: false,
+  disabled: true,
   description: 'Get all your stocks current values',
 },{
   name: 'diff',
@@ -37,7 +37,7 @@ export default [{
   params: [
     'stock-symbol',
   ],
-  disabled: false,
+  disabled: true,
   description: 'Add stock to full stocks report',
 },{
   name: 'remove',
@@ -45,7 +45,7 @@ export default [{
   params: [
     'stock-symbol',
   ],
-  disabled: false,
+  disabled: true,
   description: 'Remove stock from full stocks report',
 },{
   name: 'time',
@@ -53,7 +53,7 @@ export default [{
   params: [
     'time-string',
   ],
-  disabled: false,
+  disabled: true,
   description: 'What time to send the report at',
 },{
   name: 'graph',
@@ -92,13 +92,13 @@ export default [{
     'interval',
     'time-frame',
   ],
-  disabled: false,
+  disabled: true,
   description: 'Predict when it\'s a good time to buy a stock\nDAYS-OR-MONTHS = 1|0 TIME-BACK=number PERCENT=float INTERVAL=number TIME-FRAME=m|h|D',
 },{
   name: 'predict',
   fn: 'predictNow',
   regex: /^\/predict$/,
-  disabled: false,
+  disabled: true,
   description: 'Predict now by previously defined parameters',
 },{
   name: 'info',
